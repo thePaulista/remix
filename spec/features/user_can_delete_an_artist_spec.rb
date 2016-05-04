@@ -12,7 +12,6 @@ feature "User can delete an artist" do
 
     expect(page).to have_content("All Artists")
     expect(page).to_not have_content("Spica")
-    save_and_open_page
     expect(page).to have_content("IU")
  end
 end
