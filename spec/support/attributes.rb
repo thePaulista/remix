@@ -8,6 +8,6 @@ end
 def artist_attributes2(overrides = {})
   {
     name: "IU",
-    image_path: "http://1.soompi.io/wp-content/uploads/2015/02/IU.jpu "
+    image_path: "http://1.soompi.io/wp-content/uploads/2015/02/IU.jpg "
   }.merge(overrides)
 end
