@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   resources :songs, only: [:show]
+  resources :playmasters, only: [:index, :new, :create, :show]
 end

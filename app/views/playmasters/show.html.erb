@@ -1,0 +1,7 @@
+<h1><%= @playmaster.name %></h1>
+
+<ul>
+  <% @playmaster.songs.each do |song| %>
+    <li><%= link_to song.title, song %></li>
+    <% end %>
+</ul>
