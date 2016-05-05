@@ -38,6 +38,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'shoulda-matchers', github: "thoughtbot/shoulda-matchers"
 end
 
