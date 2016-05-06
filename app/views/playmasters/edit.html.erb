@@ -1,0 +1,14 @@
+<h1>Edit Playmaster</h1>
+
+<%= form_for(@playmaster) do |f| %>
+  <%= f.text_field :name %>
+
+  <% Song.all.each do |song| -%>
+    <div>
+      <%= check_box_tag :song_ids, song.id, @playmaster.songs.include?(song), :name => 'playmaster[song_ids][]', id: "song-#{song.id}" %>
+      <%= song.title %>
+    </div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

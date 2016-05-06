@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505022136) do
+ActiveRecord::Schema.define(version: 20160505224707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 20160505022136) do
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.string   "image_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playmaster_songs", force: :cascade do |t|
+    t.integer  "song_id"
+    t.integer  "playmaster_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "playmaster_songs", ["playmaster_id"], name: "index_playmaster_songs_on_playmaster_id", using: :btree
+  add_index "playmaster_songs", ["song_id"], name: "index_playmaster_songs_on_song_id", using: :btree
+
+  create_table "playmasters", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,5 +48,7 @@ ActiveRecord::Schema.define(version: 20160505022136) do
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
 
+  add_foreign_key "playmaster_songs", "playmasters"
+  add_foreign_key "playmaster_songs", "songs"
   add_foreign_key "songs", "artists"
 end

@@ -1,0 +1,9 @@
+<h2>All Playmasters</h2>
+
+<ul>
+  <% @playmasters.each do |playmaster| %>
+    <li><%= link_to playmaster.name, playmaster_path(playmaster) %> </li> 
+    <% end %>
+</ul>
+
+<%= link_to "New playmaster", new_playmaster_path %>

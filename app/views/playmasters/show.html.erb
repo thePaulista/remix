@@ -1,0 +1,9 @@
+<h2><%= @playmaster.name %></h2>
+
+<ul>
+  <% @playmaster.songs.each do |song| %>
+    <li><%= link_to song.title, song %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit playmaster", edit_playmaster_path(@playmaster) %>
