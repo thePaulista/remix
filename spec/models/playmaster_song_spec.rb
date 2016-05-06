@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe PlaymasterSong, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:song) }
+  it { should belong_to(:playmaster) }
 end

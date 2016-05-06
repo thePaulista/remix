@@ -10,5 +10,9 @@ FactoryGirl.define do
 
   factory :playmaster do |n|
     sequence(:name) { |n| "My KPop #{n}" }
+
+    factory :playmaster_with_songs do
+      songs {create_list(:song, 3) }
+    end
   end
 end

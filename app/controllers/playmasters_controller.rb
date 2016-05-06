@@ -16,6 +16,20 @@ class PlaymastersController < ApplicationController
      @playmaster = Playmaster.find(params[:id])
   end
 
+  def edit
+    @playmaster = Playmaster.find(params[:id])
+  end
+
+  def update
+    @playmaster = Playmaster.find(params[:id])
+
+    if @playmaster.update(playmaster_params)
+      redirect_to @playmaster
+    else
+      render :edit
+    end
+  end
+
   private
   def playmaster_params
     params.require(:playmaster).permit(:name, song_ids: [])
