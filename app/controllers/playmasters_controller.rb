@@ -1,5 +1,6 @@
 class PlaymastersController < ApplicationController
   def index
+    @playmasters = Playmaster.all
   end
 
   def new

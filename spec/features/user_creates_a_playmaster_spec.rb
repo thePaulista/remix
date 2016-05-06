@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User creates a playlist" do
+feature "User creates a playmaster" do
   scenario "they see the page for the individual playlsit" do
     song_one, song_two, song_three = create_list(:song, 3)
 

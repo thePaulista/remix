@@ -5,6 +5,10 @@ FactoryGirl.define do
   end
 
   factory :song do |n|
-    sequence(:title) { |n| "Bar Bar Bar #{1}" }
+    sequence(:title) { |n| "Bar Bar Bar #{n}" }
+  end
+
+  factory :playmaster do |n|
+    sequence(:name) { |n| "My KPop #{n}" }
   end
 end
