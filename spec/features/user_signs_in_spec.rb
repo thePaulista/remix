@@ -12,7 +12,7 @@ feature "user signs in with Spotify" do
 
     OmniAuth.config.mock_auth[:spotify] = auth_data
 
-    visit playlists_path
+    visit playmasters_path
     click_link "Sign in with Spotify"
     expect(page).to have_content("Sign out")
     expect(page).to have_content(auth_data["info"]["display_name"])
